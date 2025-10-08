@@ -2,22 +2,12 @@ microservice-chart:
   namespace: "cittadini"
 
   image:
-    repository: ghcr.io/pagopa/arc-be
-    tag: develop-latest
+    repository: ghcr.io/pagopa/arpu-be
     pullPolicy: Always
 
   ingress:
     create: true
-    host: "cittadini.internal.dev.p4pa.pagopa.it"
     path: /arcbe/(.*)
-
-  resources:
-    requests:
-      memory: " 2048Mi"
-      cpu: "1000m"
-    limits:
-      memory: " 2048Mi"
-      cpu: "1000m"
 
   livenessProbe:
     httpGet:
@@ -64,21 +54,17 @@ microservice-chart:
         key: applicationinsights.json
 
   envConfig:
-    JAVA_TOOL_OPTIONS: "-Xms1024m -Xmx1024m -Djava.util.concurrent.ForkJoinPool.common.parallelism=7 -javaagent:/app/applicationinsights-agent.jar -Dapplicationinsights.configuration.file=/mnt/file-config-external/appinsights-config/applicationinsights.json -agentlib:jdwp=transport=dt_socket,server=y,address=8001,suspend=n -Dcom.sun.management.jmxremote=true -Dcom.sun.management.jmxremote.port=3002 -Dcom.sun.management.jmxremote.rmi.port=3003 -Djava.rmi.server.hostname=127.0.0.1 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false"
-    APPLICATIONINSIGHTS_ROLE_NAME: "pagopaarcbe"
+    APPLICATIONINSIGHTS_ROLE_NAME: "arpube"
     APPLICATIONINSIGHTS_INSTRUMENTATION_LOGGING_LEVEL: "OFF"
     APPLICATIONINSIGHTS_INSTRUMENTATION_MICROMETER_ENABLED: "false"
     APPLICATIONINSIGHTS_PREVIEW_PROFILER_ENABLED: "false"
+
     ENABLE_AUDIT_APPENDER: "TRUE"
+
     JWT_TOKEN_EXPIRATION_SECONDS: "28800"
+
     REDIS_PORT: "6380"
     REDIS_SSL_ENABLED: "true"
-    ENV: "DEV"
-    AUTH_CLIENT_REDIRECT_URI: https://dev.cittadini.pagopa.it/pagamenti/auth-callback
-    AUTH_ISSUER_URI: https://dev.oneid.pagopa.it
-    AUTH_CLIENT_AUTHORIZATION_URI: https://dev.oneid.pagopa.it/login
-    AUTH_CLIENT_TOKEN_URI: https://dev.oneid.pagopa.it/oidc/token
-    AUTH_CLIENT_JWK_URI: https://dev.oneid.pagopa.it/oidc/keys
 
   externalConfigMapValues:
     rest-client:
@@ -112,26 +98,3 @@ microservice-chart:
       operator: "Equal"
       value: "true"
       effect: "NoSchedule"
-
-  autoscaling:
-    enable: false
-  #    minReplica: 1
-  #    maxReplica: 1
-  #    pollingInterval: 30 # seconds
-  #    cooldownPeriod: 300 # seconds
-  #    triggers:
-  #      - type: cpu
-  #        metadata:
-  #          type: Utilization # Allowed types are 'Utilization' or 'AverageValue'
-  #          value: "50"
-
-  keyvault:
-    name: "p4pa-d-itn-cittadini-kv"
-    tenantId: "7788edaf-0346-4068-9d79-c868aed15b3d"
-
-postman-test:
-  run: true
-  repoName: arc-be
-  dir: postman
-  collectionName: "pagopa-arc-E2E.postman_collection.json"
-  envVariablesFile: "arc_DEV.postman_environment.json" #inside azdo secure files
