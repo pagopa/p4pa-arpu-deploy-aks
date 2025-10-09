@@ -82,8 +82,8 @@ microservice-chart:
     BIZ_EVENTS_PAID_NOTICE_SERVICE_API_KEY: pagopa-bizevents-paids-trx-apimv1-subscription-key
     PULL_PAYMENT_SERVICE_API_KEY: pagopa-pullpayment-apimv1-subscription-key
     GPD_SERVICE_API_KEY: pagopa-gpd-debt-positions-apimv1-subscription-key
-    AUTH_CLIENT_ID: oneidentity-client-id
-    AUTH_CLIENT_SECRET: oneidentity-client-secret
+    AUTH_CLIENT_ID: oneidentity-arpu-client-id
+    AUTH_CLIENT_SECRET: oneidentity-arpu-client-secret
     JWT_TOKEN_PRIVATE_KEY: jwt-private-key
     JWT_TOKEN_PUBLIC_KEY: jwt-public-key
     JWT_TOKEN_ASSISTANCE_ZENDESK_PRIVATE_KEY: jwt-assistance-zendesk-private-key
