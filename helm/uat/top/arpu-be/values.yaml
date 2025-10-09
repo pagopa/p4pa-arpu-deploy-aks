@@ -36,7 +36,7 @@ microservice-chart:
     AUTH_CLIENT_JWK_URI: https://uat.oneid.pagopa.it/oidc/keys
 
   keyvault:
-    name: "arc-u-itn-cittadini-kv"
+    name: "p4pa-u-itn-cittadini-kv"
     tenantId: "7788edaf-0346-4068-9d79-c868aed15b3d"
 
 postman-test:
