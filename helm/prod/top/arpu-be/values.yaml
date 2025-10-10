@@ -1,6 +1,6 @@
 microservice-chart:
   image:
-    tag: v1.5.0@sha256:427adebbd96390de225f35d7fb5f395c8a826e7441010a8e6317cf5d65e1362d
+    tag: v1.6.0@sha256:e06ee49311779d006d377a87e29f9065708d2f7e8fd0f3401508375456f09d74
 
   ingress:
     host: "cittadini.internal.p4pa.pagopa.it"
