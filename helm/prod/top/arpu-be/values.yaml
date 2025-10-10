@@ -3,7 +3,7 @@ microservice-chart:
     tag: v1.5.0@sha256:427adebbd96390de225f35d7fb5f395c8a826e7441010a8e6317cf5d65e1362d
 
   ingress:
-    host: "citizen.internal.cittadini.pagopa.it"
+    host: "cittadini.internal.p4pa.pagopa.it"
 
   resources:
     requests:
