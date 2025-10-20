@@ -66,11 +66,15 @@ microservice-chart:
     REDIS_PORT: "6380"
     REDIS_SSL_ENABLED: "true"
 
+    P4PA_AUTH_SERVER_BASE_URL: "http://p4pa-auth-microservice-chart.payhub.svc.cluster.local:8080"
+    P4PA_CITIZEN_SERVER_BASE_URL: "http://p4pa-citizen-microservice-chart.payhub.svc.cluster.local:8080"
+
   externalConfigMapValues:
     rest-client:
       BIZ_EVENTS_PAID_NOTICE_BASE_URL: bizevents-paids-base-url
       PULL_PAYMENT_BASE_URL: pullpayment-base-url
       GPD_SERVICE_BASE_URL: gpd-service-base-url
+
     assistance:
       ASSISTANCE_ZENDESK_PRODUCT_ID: assistance-arc-zendesk-product-id
       ASSISTANCE_ZENDESK_ORGANIZATION: assistance-arc-zendesk-organization
@@ -99,6 +103,8 @@ microservice-chart:
     JWT_TOKEN_ASSISTANCE_ZENDESK_PRIVATE_KEY: jwt-assistance-zendesk-private-key
 
     WHITE_LIST_USERS: cf-whitelist
+
+    P4PA_AUTH_CLIENT_SECRET: piattaforma-unitaria-client-secret
 
   # nodeSelector: {}
 
