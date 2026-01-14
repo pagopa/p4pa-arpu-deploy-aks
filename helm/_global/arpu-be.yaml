@@ -84,11 +84,8 @@ microservice-chart:
   envSecret:
     APPLICATIONINSIGHTS_CONNECTION_STRING: appinsights-connection-string
 
-    AUTH_CLIENT_ID: oneidentity-client-id
-    AUTH_CLIENT_SECRET: oneidentity-client-secret
-    # TODO redirect to new FE endpoint
-    #AUTH_CLIENT_ID: oneidentity-arpu-client-id
-    #AUTH_CLIENT_SECRET: oneidentity-arpu-client-secret
+    AUTH_CLIENT_ID: oneidentity-arpu-client-id
+    AUTH_CLIENT_SECRET: oneidentity-arpu-client-secret
 
     JWT_TOKEN_PRIVATE_KEY: jwt-private-key
     JWT_TOKEN_PUBLIC_KEY: jwt-public-key
