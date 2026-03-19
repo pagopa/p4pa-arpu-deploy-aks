@@ -68,6 +68,7 @@ microservice-chart:
 
     P4PA_AUTH_SERVER_BASE_URL: "http://p4pa-auth-microservice-chart.payhub.svc.cluster.local:8080"
     P4PA_CITIZEN_SERVER_BASE_URL: "http://p4pa-citizen-microservice-chart.payhub.svc.cluster.local:8080"
+    GOOGLE_RECAPTCHA_SERVER_BASE_URL: "https://www.google.com/recaptcha/api"
 
   externalConfigMapValues:
     assistance:
@@ -93,6 +94,7 @@ microservice-chart:
     WHITE_LIST_USERS: cf-whitelist
 
     P4PA_AUTH_CLIENT_SECRET: piattaforma-unitaria-client-secret
+    GOOGLE_RECAPTCHA_SECRET: recaptcha-secret-key
 
   # nodeSelector: {}
 
