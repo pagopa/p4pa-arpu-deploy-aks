@@ -36,7 +36,7 @@ microservice-chart:
     AUTH_CLIENT_TOKEN_URI: https://dev.oneid.pagopa.it/oidc/token
     AUTH_CLIENT_JWK_URI: https://dev.oneid.pagopa.it/oidc/keys
 
-    GOOGLE_RECAPTCHA_ENABLED: true
+    GOOGLE_RECAPTCHA_ENABLED: "true"
 
   keyvault:
     name: "p4pa-d-itn-cittadini-kv"
