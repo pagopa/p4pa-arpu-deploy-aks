@@ -75,5 +75,5 @@ postman-test:
   run: true
   repoName: arpu-be
   dir: postman
-  collectionName: "pagopa-arc-E2E.postman_collection.json"
+  collectionName: "pagopa-arpu-be-E2E.postman_collection.json"
   envVariablesFile: "arc_UAT.postman_environment.json" #inside azdo secure files
