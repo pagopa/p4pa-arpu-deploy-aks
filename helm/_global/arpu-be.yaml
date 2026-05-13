@@ -99,7 +99,30 @@ microservice-chart:
   # nodeSelector: {}
 
   tolerations:
-    - key: "cittadiniOnly"
+    - key: "puOnly"
       operator: "Equal"
       value: "true"
       effect: "NoSchedule"
+
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+          - matchExpressions:
+              - key: domain
+                operator: In
+                values:
+                  - pu
+
+  canaryDelivery:
+    create: false
+    ingress:
+      header: true
+      headerName: X-Canary
+      headerValue: canary
+      weightPercent: 10
+    image:
+      repository: ghcr.io/pagopa/arpu-be
+      tag: <HOT_FIX_IMAGE_HERE>
+    envSecret: { }
+    envConfig: { }
