@@ -62,8 +62,6 @@ microservice-chart:
     ENABLE_AUDIT_APPENDER: "TRUE"
 
     JWT_TOKEN_EXPIRATION_SECONDS: "28800"
-
-    REDIS_PORT: "6380"
     REDIS_SSL_ENABLED: "true"
 
     P4PA_AUTH_SERVER_BASE_URL: "http://p4pa-auth-microservice-chart.payhub.svc.cluster.local:8080"
@@ -88,6 +86,7 @@ microservice-chart:
 
     REDIS_HOST: cache-standalone-host
     REDIS_PASSWORD: cache-password
+    REDIS_PORT: cache-port
 
     JWT_TOKEN_ASSISTANCE_ZENDESK_PRIVATE_KEY: jwt-assistance-zendesk-private-key
 
