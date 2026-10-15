@@ -5,6 +5,9 @@ microservice-chart:
     repository: ghcr.io/pagopa/arpu-be
     pullPolicy: Always
 
+  imagePullSecrets:
+    name: ghcr-secret
+
   ingress:
     create: true
     path: /arcbe/(.*)
